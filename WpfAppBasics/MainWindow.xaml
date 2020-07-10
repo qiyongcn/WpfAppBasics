@@ -28,7 +28,7 @@
             <TextBlock Text="Description" />
             <TextBox Padding="2"/>
 
-            <Grid>
+        <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="2*" />
                     <ColumnDefinition Width="*" />
@@ -46,6 +46,9 @@
             </StackPanel>
 
             </Grid>
+		
+		<!-- Description -->
+		
 
         </StackPanel>
         
