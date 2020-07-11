@@ -49,12 +49,19 @@ namespace WpfAppBasics
                 return;
             }
             var combo = (ComboBox)sender;
-            this.NoteText.Text = (string)((ComboBoxItem)combo.SelectedValue).Content;
+            var value = (ComboBoxItem)combo.SelectedValue;
+            //this.NoteText.Text = "qiyong";
+            this.NoteText.Text = (string)value.Content;
         }
 
         private void Window_Load(object sender, RoutedEventArgs e)
         {
-            FinishDropdown_SelectionChanged(this.FinishDropdown_SelectionChanged, null);
+            FinishDropdown_SelectionChanged(this.FinishDropdown, null);
+        }
+
+        private void SupplierNameText_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            this.MassText.Text = this.SupplierNameText.Text;
         }
     }
 }
