@@ -23,5 +23,38 @@ namespace WpfAppBasics
         {
             InitializeComponent();
         }
+
+
+
+        private void ApllyButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show($"The description is : {this.DescriptionContext.Text}");
+        }
+
+        private void ResetButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.WeldCheckbox.IsChecked = this.AssemblyCheckbox.IsChecked = this.PlasmaCheckbox.IsChecked = this.LaserCheckbox.IsChecked = this.PurchaseCheckbox.IsChecked =
+                this.LatheCheckbox.IsChecked = this.DrillCheckbox.IsChecked = this.FoldCheckbox.IsChecked = this.RollCheckbox.IsChecked = this.SawCheckbox.IsChecked = false;
+        }
+
+        private void Checkbox_checked(object sender, RoutedEventArgs e)
+        {
+            this.Length.Text += (string)((CheckBox)sender).Content + "_"; 
+        }
+
+        private void FinishDropdown_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(this.NoteText == null)
+            {
+                return;
+            }
+            var combo = (ComboBox)sender;
+            this.NoteText.Text = (string)((ComboBoxItem)combo.SelectedValue).Content;
+        }
+
+        private void Window_Load(object sender, RoutedEventArgs e)
+        {
+            FinishDropdown_SelectionChanged(this.FinishDropdown_SelectionChanged, null);
+        }
     }
 }
