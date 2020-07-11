@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppBasics"
         mc:Ignorable="d"
-        Title="Wpf Basics" Height="700" Width="400">
+        Title="陶瓷多元统计分析工具" Height="700" Width="400" Icon="logo2.png">
 
     <Border Padding="10">
     
